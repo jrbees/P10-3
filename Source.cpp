@@ -24,6 +24,28 @@ int main() {
         cin >> scores[i];
     }
 
+    // Find highest and lowest scores
+    int highest_score = scores[0];
+    int lowest_score = scores[0];
+    double total_score = scores[0];
+    for (int i = 1; i < num_students; ++i) {
+        if (scores[i] > highest_score) {
+            highest_score = scores[i];
+        }
+        if (scores[i] < lowest_score) {
+            lowest_score = scores[i];
+        }
+        total_score += scores[i];
+    }
+
+    // Calculate class average
+    double average_score = total_score / num_students;
+
+    // Display results
+    cout << "\nHighest score: " << highest_score << endl;
+    cout << "Lowest score: " << lowest_score << endl;
+    cout << "Class average: " << average_score << endl;
+
 
 
     return 0;
